@@ -67,7 +67,7 @@ li {
 }
 
 .logo-hero {
-    width: 80px;
+    width: 100px;
     margin-bottom: 20px;
 }
 
@@ -153,31 +153,46 @@ button a {
     text-align: justify;
 }
 
-/* NOSSO TRABALHO */
-.trabalho {
-    text-align: center;
-    padding: 60px 20px;
-    background-color: #353535;
-    color: #ECECEC;
-}
-
-.trabalho h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
-}
-
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
+/* CARROSSEL */
+.carousel {
+    overflow: hidden;
+    width: 100%;
     max-width: 1000px;
     margin: 0 auto;
 }
 
-.galeria img {
-    width: 100%;
+.carousel-track {
+    display: flex;
+    gap: 15px;
+    animation: slide 20s linear infinite;
+}
+
+.carousel-track img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
     border-radius: 5px;
     box-shadow: 0px 2px 6px rgba(0,0,0,0.4);
+    flex-shrink: 0;
+}
+
+/* Pausa ao passar o mouse */
+.carousel:hover .carousel-track {
+    animation-play-state: paused;
+}
+
+/* animação contínua infinita */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* metade do track para loop perfeito */
+}
+
+/* MOBILE */
+@media screen and (max-width: 768px) {
+    .carousel-track img {
+        width: 200px;
+        height: 200px;
+    }
 }
 
 /* LINHA DIVISÃO */
@@ -200,6 +215,7 @@ button a {
 }
 
 .contato-info a {
+    width: 250px;
     display: block;
     margin: 10px 0;
     padding: 12px;
@@ -225,13 +241,26 @@ button a {
     margin: 15px 0;
 }
 
+h3{
+    font-size: 30px;
+}
+
+h2{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+    color: #ECECEC;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+
 /* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
     font-size: 14px;
     color: #ECECEC;
-    background-color: #1f1f1f;
 }
 
 /* MOBILE AJUSTES */
@@ -270,7 +299,12 @@ footer {
     }
 
     .foto-julio {
-        width: 200px;
+        width: 250px;
+    }
+
+    .logo-hero {
+        width: 130px;
+        margin-bottom: 20px;
     }
 }
 
