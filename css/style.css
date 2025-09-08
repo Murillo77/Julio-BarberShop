@@ -106,8 +106,6 @@ button a {
 .salao {
     max-width: 100%;
     height: auto;
-    border: 6px solid #E0D157;
-    box-shadow: 0px 2px 4px 0px black;
     border-radius: 5px;
 }
 
