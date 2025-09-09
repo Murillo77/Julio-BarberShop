@@ -38,3 +38,29 @@ window.addEventListener('scroll', () => {
         aboutSection.classList.add('show');
     }
 });
+
+const carousel = document.querySelector('.carousel-track');
+const imgs = Array.from(carousel.children);
+const imgWidth = 250;
+const gap = 15;
+
+// duplicar todas as imagens para efeito contínuo
+imgs.forEach(img => {
+    carousel.appendChild(img.cloneNode(true));
+});
+
+let scrollPosition = 0;
+const totalWidth = (imgWidth + gap) * imgs.length;
+
+function animate() {
+    scrollPosition += 1; // velocidade do carrossel, ajuste aqui
+    if (scrollPosition >= totalWidth) {
+        scrollPosition = 0; // volta pro início de forma contínua
+    }
+    carousel.style.transform = `translateX(-${scrollPosition}px)`;
+    requestAnimationFrame(animate);
+}
+
+// inicia a animação contínua
+animate();
+
