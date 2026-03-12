@@ -125,8 +125,8 @@ if (formAgendamento) {
             texto += `%0AObserva%C3%A7%C3%B5es%3A%20${encodeURIComponent(observacoes)}`;
         }
 
-        // Substitua "seunumerowhatsapp" pelo número real da barbearia no mesmo formato usado nas outras âncoras
-        const numeroBarbearia = 'seunumerowhatsapp';
+        // Número real da barbearia para receber os agendamentos
+        const numeroBarbearia = '5511930136990';
         const url = `https://wa.me/${numeroBarbearia}?text=${texto}`;
 
         if (mensagemRetorno) {

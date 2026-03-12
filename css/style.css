@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     background: radial-gradient(circle at top left, #302c1c 0, #111111 40%, #050509 100%);
     font-family: "Poppins", Arial, Helvetica, sans-serif;
@@ -1045,6 +1050,41 @@ button a {
 
     .footer-content {
         grid-template-columns: 1fr;
+        text-align: center;
+        gap: 24px;
+    }
+
+    .footer-brand p,
+    .footer-contato p,
+    .footer-links ul {
+        text-align: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .agendamento {
+        padding: 60px 16px 70px;
+    }
+
+    .agendamento-card {
+        padding: 24px 18px 22px;
+        border-radius: 16px;
+    }
+
+    .campo-duplo {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contato-grid-top {
+        grid-template-columns: 1fr;
+    }
+
+    .contato-card p {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 }
 
