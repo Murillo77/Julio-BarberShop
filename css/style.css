@@ -190,6 +190,10 @@ li {
     color: #E0D157;
 }
 
+.hero-logo {
+    display: none;
+}
+
 .hero-tagline {
     font-size: 11px;
     letter-spacing: 0.22em;
@@ -1023,6 +1027,15 @@ button a {
     .footer-content {
         grid-template-columns: 1fr 1fr;
         gap: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-logo {
+        display: block;
+        width: 120px;
+        height: auto;
+        margin: 0 auto 20px;
     }
 }
 
