@@ -71,9 +71,11 @@ if (carousel) {
 
     let scrollPosition = 0;
     const totalWidth = (imgWidth + gap) * imgs.length;
+    const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
+    const velocidade = () => (isMobile() ? 0.7 : 0.5); // um pouco mais rápido no mobile
 
     function animate() {
-        scrollPosition += 0.5; // velocidade do carrossel, mais lenta
+        scrollPosition += velocidade();
         if (scrollPosition >= totalWidth) {
             scrollPosition = 0; // volta pro início de forma contínua
         }
@@ -126,7 +128,7 @@ if (formAgendamento) {
         }
 
         // Número real da barbearia para receber os agendamentos
-        const numeroBarbearia = '5511930136990';
+        const numeroBarbearia = '5511992381054';
         const url = `https://wa.me/${numeroBarbearia}?text=${texto}`;
 
         if (mensagemRetorno) {
